@@ -33,11 +33,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net-Next, Version=4.0.2.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net-Next.4.0.2\lib\net472\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data">
       <HintPath>..\..\..\v4.5.2\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,6 +65,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addnewadress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addnewadress.Designer.cs">
+      <DependentUpon>addnewadress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addnewwebsiteadmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addnewwebsiteadmin.Designer.cs">
+      <DependentUpon>addnewwebsiteadmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connection.cs" />
     <Compile Include="Connexion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,13 +90,46 @@
     <Compile Include="Accueil.Designer.cs">
       <DependentUpon>Accueil.cs</DependentUpon>
     </Compile>
+    <Compile Include="addnewnadmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addnewnadmin.Designer.cs">
+      <DependentUpon>addnewnadmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addnewlibBib.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addnewlibBib.Designer.cs">
+      <DependentUpon>addnewlibBib.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modificationDeProfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modificationDeProfil.Designer.cs">
+      <DependentUpon>modificationDeProfil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="addnewadress.resx">
+      <DependentUpon>addnewadress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addnewwebsiteadmin.resx">
+      <DependentUpon>addnewwebsiteadmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Connexion.resx">
       <DependentUpon>Connexion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addnewnadmin.resx">
+      <DependentUpon>addnewnadmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addnewlibBib.resx">
+      <DependentUpon>addnewlibBib.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modificationDeProfil.resx">
+      <DependentUpon>modificationDeProfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -78,6 +140,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

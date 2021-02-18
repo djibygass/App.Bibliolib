@@ -14,7 +14,7 @@ namespace Bibliolib
     public partial class Connexion : Form
     {
         //pdo
-        private static MySqlConnection db = new MySqlConnection("database=bibliolib;server=localhost;user id = root; pwd=");
+        
         public Connexion()
         {
             InitializeComponent();
@@ -41,38 +41,54 @@ namespace Bibliolib
 
         private void btnConnexion_Click(object sender, EventArgs e)
         {
+            var checkit = 0;
+            var id = 0;
+            var loginstr = "";
+            var passhash = "";
             try
             {
-                db.Open();
-                MySqlCommand command = db.CreateCommand();
+                Connection.db.Open();
+               
+                MySqlCommand command = Connection.db.CreateCommand();
 
-                command.Parameters.AddWithValue("@login", login.Text);
-                command.Parameters.AddWithValue("@password", password.Text);
-                command.CommandText = "SELECT login FROM admin where login =  (@login) AND password = (@password)";
-                MySqlDataReader reader = command.ExecuteReader();
-                Boolean check = false;
-                while (reader.Read())
-                {
+                  command.Parameters.AddWithValue("@login", login.Text);
+                  command.Parameters.AddWithValue("@password", password.Text);
+                  command.CommandText = "SELECT * FROM admins where login =  (@login) AND A_a = '1' ";
+                  MySqlDataReader reader = command.ExecuteReader();
+               
+
+                  Boolean check = false;
+                  while (reader.Read())
+                  {
                     check = true;
-                }
+                    id = Convert.ToInt32(reader.GetString(0));
+                    loginstr = reader.GetString(1);
+                    passhash = reader.GetString(2);
+                  }
 
-                if (check == true)
-                {
-                    this.Hide();
-                    espaceAdmin eA = new espaceAdmin(reader.GetString(0));
-                    eA.Show(); 
-                 }
-                 else
-                 {
-                     MessageBox.Show("login ou mot de passe erroné");
-                 }
-                
-                db.Close();
+                  if (check == true && BCrypt.Net.BCrypt.Verify(password.Text, passhash))
+                  {
+                    checkit = 1;
+                  }
+                   else
+                   {
+                       MessageBox.Show("login ou mot de passe erroné");   
+                   }
+
+                Connection.db.Close();
             }
             catch
             {
                 MessageBox.Show("connexion échouée");
             }
+            if (checkit==1)
+            {
+                this.Hide();
+
+                espaceAdmin eA = new espaceAdmin(loginstr,id);
+                eA.Show();
+            }
+
         }
 
         public void Connexion_FormClosing(object sender, FormClosingEventArgs e)
