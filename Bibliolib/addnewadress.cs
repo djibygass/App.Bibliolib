@@ -79,5 +79,10 @@ namespace Bibliolib
                 MessageBox.Show("Erreur, un des Champs est vide");
             }
         }
+
+        private void addnewadress_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

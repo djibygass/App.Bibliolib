@@ -36,14 +36,13 @@ namespace Bibliolib
             this.unNouveauAdministrateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deSiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.duLogicielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uneNouvelleAdresseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.publierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uneAnnonceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.unÉvenementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.unePromoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gérerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.leStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lesUtilisateursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lesAdministrateursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ajouterUnLivreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.restockageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paramètreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editerProfil = new System.Windows.Forms.ToolStripMenuItem();
             this.déconnexionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,8 +59,6 @@ namespace Bibliolib
             this.listAdmin = new System.Windows.Forms.ListBox();
             this.listAdminSite = new System.Windows.Forms.ListBox();
             this.idhide = new System.Windows.Forms.Label();
-            this.uneNouvelleAdresseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lesAdressesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.navBar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.listeAdmin.SuspendLayout();
@@ -109,74 +106,71 @@ namespace Bibliolib
             // deSiteToolStripMenuItem
             // 
             this.deSiteToolStripMenuItem.Name = "deSiteToolStripMenuItem";
-            this.deSiteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deSiteToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.deSiteToolStripMenuItem.Text = "De site";
             this.deSiteToolStripMenuItem.Click += new System.EventHandler(this.deSiteToolStripMenuItem_Click);
             // 
             // duLogicielToolStripMenuItem
             // 
             this.duLogicielToolStripMenuItem.Name = "duLogicielToolStripMenuItem";
-            this.duLogicielToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.duLogicielToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.duLogicielToolStripMenuItem.Text = "Du logiciel";
             this.duLogicielToolStripMenuItem.Click += new System.EventHandler(this.duLogicielToolStripMenuItem_Click);
+            // 
+            // uneNouvelleAdresseToolStripMenuItem
+            // 
+            this.uneNouvelleAdresseToolStripMenuItem.Name = "uneNouvelleAdresseToolStripMenuItem";
+            this.uneNouvelleAdresseToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.uneNouvelleAdresseToolStripMenuItem.Text = "une nouvelle adresse";
+            this.uneNouvelleAdresseToolStripMenuItem.Click += new System.EventHandler(this.uneNouvelleAdresseToolStripMenuItem_Click);
             // 
             // publierToolStripMenuItem
             // 
             this.publierToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uneAnnonceToolStripMenuItem,
-            this.unÉvenementToolStripMenuItem,
-            this.unePromoToolStripMenuItem});
+            this.uneAnnonceToolStripMenuItem});
             this.publierToolStripMenuItem.Name = "publierToolStripMenuItem";
             this.publierToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.publierToolStripMenuItem.Text = "Publier";
+            this.publierToolStripMenuItem.Click += new System.EventHandler(this.publierToolStripMenuItem_Click);
             // 
             // uneAnnonceToolStripMenuItem
             // 
             this.uneAnnonceToolStripMenuItem.Name = "uneAnnonceToolStripMenuItem";
             this.uneAnnonceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.uneAnnonceToolStripMenuItem.Text = "une annonce";
-            // 
-            // unÉvenementToolStripMenuItem
-            // 
-            this.unÉvenementToolStripMenuItem.Name = "unÉvenementToolStripMenuItem";
-            this.unÉvenementToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.unÉvenementToolStripMenuItem.Text = "un évenement";
-            // 
-            // unePromoToolStripMenuItem
-            // 
-            this.unePromoToolStripMenuItem.Name = "unePromoToolStripMenuItem";
-            this.unePromoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.unePromoToolStripMenuItem.Text = "une promo";
+            this.uneAnnonceToolStripMenuItem.Click += new System.EventHandler(this.uneAnnonceToolStripMenuItem_Click);
             // 
             // gérerToolStripMenuItem
             // 
             this.gérerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.leStockToolStripMenuItem,
-            this.lesUtilisateursToolStripMenuItem,
-            this.lesAdministrateursToolStripMenuItem,
-            this.lesAdressesToolStripMenuItem});
+            this.leStockToolStripMenuItem});
             this.gérerToolStripMenuItem.Name = "gérerToolStripMenuItem";
             this.gérerToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.gérerToolStripMenuItem.Text = "Gérer";
             // 
             // leStockToolStripMenuItem
             // 
+            this.leStockToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ajouterUnLivreToolStripMenuItem,
+            this.restockageToolStripMenuItem});
             this.leStockToolStripMenuItem.Name = "leStockToolStripMenuItem";
             this.leStockToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.leStockToolStripMenuItem.Text = "le stock";
             this.leStockToolStripMenuItem.Click += new System.EventHandler(this.leStockToolStripMenuItem_Click);
             // 
-            // lesUtilisateursToolStripMenuItem
+            // ajouterUnLivreToolStripMenuItem
             // 
-            this.lesUtilisateursToolStripMenuItem.Name = "lesUtilisateursToolStripMenuItem";
-            this.lesUtilisateursToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.lesUtilisateursToolStripMenuItem.Text = "les utilisateurs";
+            this.ajouterUnLivreToolStripMenuItem.Name = "ajouterUnLivreToolStripMenuItem";
+            this.ajouterUnLivreToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ajouterUnLivreToolStripMenuItem.Text = "Ajouter un livre";
+            this.ajouterUnLivreToolStripMenuItem.Click += new System.EventHandler(this.ajouterUnLivreToolStripMenuItem_Click);
             // 
-            // lesAdministrateursToolStripMenuItem
+            // restockageToolStripMenuItem
             // 
-            this.lesAdministrateursToolStripMenuItem.Name = "lesAdministrateursToolStripMenuItem";
-            this.lesAdministrateursToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.lesAdministrateursToolStripMenuItem.Text = "les administrateurs";
+            this.restockageToolStripMenuItem.Name = "restockageToolStripMenuItem";
+            this.restockageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.restockageToolStripMenuItem.Text = "commandes";
+            this.restockageToolStripMenuItem.Click += new System.EventHandler(this.restockageToolStripMenuItem_Click);
             // 
             // paramètreToolStripMenuItem
             // 
@@ -186,18 +180,19 @@ namespace Bibliolib
             this.paramètreToolStripMenuItem.Name = "paramètreToolStripMenuItem";
             this.paramètreToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.paramètreToolStripMenuItem.Text = "Paramètres";
+            this.paramètreToolStripMenuItem.Click += new System.EventHandler(this.paramètreToolStripMenuItem_Click);
             // 
             // editerProfil
             // 
             this.editerProfil.Name = "editerProfil";
-            this.editerProfil.Size = new System.Drawing.Size(180, 22);
+            this.editerProfil.Size = new System.Drawing.Size(163, 22);
             this.editerProfil.Text = "éditer mon profil";
             this.editerProfil.Click += new System.EventHandler(this.changerDeMotDePasseToolStripMenuItem_Click);
             // 
             // déconnexionToolStripMenuItem
             // 
             this.déconnexionToolStripMenuItem.Name = "déconnexionToolStripMenuItem";
-            this.déconnexionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.déconnexionToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.déconnexionToolStripMenuItem.Text = "déconnexion";
             this.déconnexionToolStripMenuItem.Click += new System.EventHandler(this.déconnexionToolStripMenuItem_Click);
             // 
@@ -335,19 +330,6 @@ namespace Bibliolib
             this.idhide.TabIndex = 8;
             this.idhide.Visible = false;
             // 
-            // uneNouvelleAdresseToolStripMenuItem
-            // 
-            this.uneNouvelleAdresseToolStripMenuItem.Name = "uneNouvelleAdresseToolStripMenuItem";
-            this.uneNouvelleAdresseToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.uneNouvelleAdresseToolStripMenuItem.Text = "une nouvelle adresse";
-            this.uneNouvelleAdresseToolStripMenuItem.Click += new System.EventHandler(this.uneNouvelleAdresseToolStripMenuItem_Click);
-            // 
-            // lesAdressesToolStripMenuItem
-            // 
-            this.lesAdressesToolStripMenuItem.Name = "lesAdressesToolStripMenuItem";
-            this.lesAdressesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.lesAdressesToolStripMenuItem.Text = "les adresses";
-            // 
             // espaceAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -364,7 +346,7 @@ namespace Bibliolib
             this.MainMenuStrip = this.navBar;
             this.Name = "espaceAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Accueil";
+            this.Text = "Acceuil";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.espaceAdmin_FormClosing);
             this.Load += new System.EventHandler(this.espaceAdmin_Load);
             this.navBar.ResumeLayout(false);
@@ -388,11 +370,8 @@ namespace Bibliolib
         private System.Windows.Forms.ToolStripMenuItem duLogicielToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem publierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uneAnnonceToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem unÉvenementToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem unePromoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gérerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem leStockToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem lesUtilisateursToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem paramètreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editerProfil;
         private System.Windows.Forms.ToolStripMenuItem déconnexionToolStripMenuItem;
@@ -408,9 +387,9 @@ namespace Bibliolib
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TableLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.ToolStripMenuItem lesAdministrateursToolStripMenuItem;
         private System.Windows.Forms.Label idhide;
         private System.Windows.Forms.ToolStripMenuItem uneNouvelleAdresseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem lesAdressesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ajouterUnLivreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem restockageToolStripMenuItem;
     }
 }

@@ -82,7 +82,7 @@ namespace Bibliolib
                     flowLayoutPanel1.Controls.Add(
                        new Label()
                        {
-                           Text = "\n" + reader.GetString(6) + "\n" + reader.GetString(3) + "\n" + reader.GetString(4) + "\n_____________________________\n",
+                           Text = "\n" + reader.GetString(7) + "\n" + reader.GetString(3) + "\n" + reader.GetString(4) + "\n_____________________________\n",
                            AutoSize = true
                        }
                         );
@@ -208,7 +208,7 @@ namespace Bibliolib
                     command.Parameters.AddWithValue("@idsender", ids);
                     command.Parameters.AddWithValue("@idrecipient", idr);
                     command.Parameters.AddWithValue("@content", message.Text);
-                    command.CommandText = "INSERT INTO chatbox(id_sender, id_recipient, content,date_time) VALUES (@idsender , @idrecipient, @content, NOW())";
+                    command.CommandText = "INSERT INTO chatbox(id_sender, id_recipient, content,date_time,lu) VALUES (@idsender , @idrecipient, @content, NOW(),'0')";
                     command.ExecuteNonQuery();
              /*       if (command.ExecuteNonQuery()>0)
                     {
@@ -263,6 +263,34 @@ namespace Bibliolib
         private void leStockToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void publierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uneAnnonceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            annonce an = new annonce();
+            an.Show();
+        }
+
+        private void paramètreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void restockageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            livrecommandes lc = new livrecommandes();
+            lc.Show();
+        }
+
+        private void ajouterUnLivreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AjoutLivre al = new AjoutLivre();
+            al.Show();
         }
     }
 }

@@ -77,6 +77,18 @@
     <Compile Include="addnewwebsiteadmin.Designer.cs">
       <DependentUpon>addnewwebsiteadmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="AjoutLivre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjoutLivre.Designer.cs">
+      <DependentUpon>AjoutLivre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="annonce.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="annonce.Designer.cs">
+      <DependentUpon>annonce.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connection.cs" />
     <Compile Include="Connexion.cs">
       <SubType>Form</SubType>
@@ -102,6 +114,18 @@
     <Compile Include="addnewlibBib.Designer.cs">
       <DependentUpon>addnewlibBib.cs</DependentUpon>
     </Compile>
+    <Compile Include="gestionStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gestionStock.Designer.cs">
+      <DependentUpon>gestionStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="livrecommandes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="livrecommandes.Designer.cs">
+      <DependentUpon>livrecommandes.cs</DependentUpon>
+    </Compile>
     <Compile Include="modificationDeProfil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +140,12 @@
     <EmbeddedResource Include="addnewwebsiteadmin.resx">
       <DependentUpon>addnewwebsiteadmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AjoutLivre.resx">
+      <DependentUpon>AjoutLivre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="annonce.resx">
+      <DependentUpon>annonce.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Connexion.resx">
       <DependentUpon>Connexion.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="addnewlibBib.resx">
       <DependentUpon>addnewlibBib.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="livrecommandes.resx">
+      <DependentUpon>livrecommandes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modificationDeProfil.resx">
       <DependentUpon>modificationDeProfil.cs</DependentUpon>
@@ -140,6 +173,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

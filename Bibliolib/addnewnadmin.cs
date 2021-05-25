@@ -25,26 +25,31 @@ namespace Bibliolib
             {
                 MessageBox.Show("Merci de remplir tous les champs");
             }
-            string Tpassword = BCrypt.Net.BCrypt.HashPassword(Apassword.Text);
-            try
+            else
             {
-                Connection.db.Open();
-                MySqlCommand command = Connection.db.CreateCommand();
+                string Tpassword = BCrypt.Net.BCrypt.HashPassword(Apassword.Text);
+                try
+                {
+                    Connection.db.Open();
+                    MySqlCommand command = Connection.db.CreateCommand();
 
-                command.Parameters.AddWithValue("@login", Alogin.Text);
-                command.Parameters.AddWithValue("@password", Tpassword);
-                command.CommandText = "INSERT INTO  admins(login, password,A_a) VALUES  (@login, @password, '1')";
-                command.ExecuteReader();
+                    command.Parameters.AddWithValue("@login", Alogin.Text);
+                    command.Parameters.AddWithValue("@password", Tpassword);
+                    command.CommandText = "INSERT INTO  admins(login, password,A_a) VALUES  (@login, @password, '1')";
+                    command.ExecuteReader();
 
-                Connection.db.Close();
+                    Connection.db.Close();
+                    Alogin.Text = "";
+                    Apassword.Text = "";
+                    MessageBox.Show("Vous avez ajoutez un nouvel admin");
+                }
+                catch
+                {
+                    MessageBox.Show("connexion échouée");
+                }
             }
-            catch
-            {
-                MessageBox.Show("connexion échouée");
-            }
-            Alogin.Text = "";
-            Apassword.Text = "";
-            MessageBox.Show("Vous avez ajoutez un nouvel admin");
+         
+        
         }
     }
 }
